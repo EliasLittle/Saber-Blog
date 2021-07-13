@@ -1,45 +1,62 @@
 <template>  
-  <Wrap :page="page">
-    <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
-      <header class="post-header">
-        <h1 class="post-title p-name" itemprop="name headline">{{ page.title }}</h1>
-        <p class="post-meta">
-          <time
-            class="dt-published"
-            :datetime="page.createdAt"
-            itemprop="datePublished"
-          >{{ formatDate(page.createdAt) }}</time>
-        </p>
-      </header>
+  <BaseLayout :page="page">
+    <h1 class="leading-none mb-2">{{ page.title }}</h1>
+    <p class="text-grey-darker text-xl md:mt-0">
+      {{ page.author }} • {{ date(page.createdAt) }}
+    </p>
   
-      <div class="post-content e-content" itemprop="articleBody">
-        <slot name="default"/>
+    <img :src="page.assets.cover" :alt="`${page.title} cover image`" class="mb-2" v-if="page.assets.cover">
+  
+    <saber-link
+      :to="category.permalink"
+      :title="`View posts in ${category.name}`"
+      class="inline-block bg-gray-light hover:bg-blue-lighter leading-loose tracking-wide text-grey-darkest uppercase text-xs font-semibold rounded mr-4 px-3 pt-px"
+      v-for="category in page.categoriesInfo"
+      :key="category.permalink"
+    >
+      {{ category.name }}
+    </saber-link>
+  
+    <div class="border-b border-blue-lighter mb-10 pb-4">
+      <slot name="default" />
+    </div>
+  
+    <nav class="flex justify-between text-sm md:text-base">
+      <div>
+        <saber-link
+          :to="page.prevPost.permalink"
+          :title="`Older Post: ${page.prevPost.title}`"
+          v-if="page.prevPost"
+        >
+          &LeftArrow; {{ page.prevPost.title }}
+        </saber-link>
       </div>
   
-      <Disqus 
-        v-if="page.comments !== false && $themeConfig.disqus" 
-        :url="$siteConfig.url" 
-        :permalink="page.permalink" 
-        :shortname="$themeConfig.disqus" 
-      />
-  
-      <a class="u-url" :href="page.permalink" hidden></a>
-    </article>
-  </Wrap>
+      <div>
+        <saber-link
+          :to="page.nextPost.permalink"
+          :title="`Newer Post: ${page.nextPost.title}`"
+          v-if="page.nextPost"
+        >
+          {{ page.nextPost.title }} &RightArrow;
+        </saber-link>
+      </div>
+    </nav>
+  </BaseLayout>
 </template>
 
 <script>
-import formatDate from '../utils/formatDate';
-import Wrap from '../components/Wrap.vue';
-import Disqus from '../components/Disqus.vue';
+import BaseLayout from '../components/BaseLayout';
+import date from '../utils/date';
+import transition from '../components/PageTransition';
 export default {
   components: {
-    Wrap: Wrap,
-    Disqus: Disqus
+    BaseLayout: BaseLayout
   },
   props: ['page'],
   methods: {
-    formatDate: formatDate
-  }
+    date: date
+  },
+  transition: transition
 };
 </script>

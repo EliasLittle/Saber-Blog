@@ -2797,6 +2797,11 @@ function-bind@^1.1.1:
   resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.1.tgz#a56899d3ea3c9bab874bb9773b7c5ede92f4895d"
   integrity sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==
 
+fuse.js@^3.4.5:
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/fuse.js/-/fuse.js-3.6.1.tgz#7de85fdd6e1b3377c23ce010892656385fd9b10c"
+  integrity sha512-hT9yh/tiinkmirKrlv4KWOjztdoZo1mx9Qh4KvWqC7isoXwdUY3PNWUxceF4/qO9R6riA2C29jdTOeQOIROjgw==
+
 gensync@^1.0.0-beta.2:
   version "1.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/gensync/-/gensync-1.0.0-beta.2.tgz#32a6ee76c3d7f52d46b2b1ae5d93fea8580a25e0"
@@ -3979,6 +3984,11 @@ npm-conf@^1.1.0:
     config-chain "^1.1.11"
     pify "^3.0.0"
 
+nprogress@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/nprogress/-/nprogress-0.2.0.tgz#cb8f34c53213d895723fcbab907e9422adbcafb1"
+  integrity sha1-y480xTIT2JVyP8urkH6UIq28r7E=
+
 nth-check@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/nth-check/-/nth-check-1.0.2.tgz#b2bd295c37e3dd58a3bf0700376663ba4d9cf05c"
@@ -4657,6 +4667,11 @@ pretty-ms@^5.0.0:
   dependencies:
     parse-ms "^2.1.0"
 
+prismjs@^1.24.1:
+  version "1.24.1"
+  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.24.1.tgz#c4d7895c4d6500289482fa8936d9cdd192684036"
+  integrity sha512-mNPsedLuk90RVJioIky8ANZEwYm5w9LcvCXrxHlwf4fNVSn8jEipMybMkWUyyF0JhnC+C4VcOVSBuHRKs1L5Ow==
+
 process-nextick-args@~2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.1.tgz#7820d9b16120cc55ca9ae7792680ae7dba6d7fe2"
@@ -4980,6 +4995,13 @@ run-queue@^1.0.0, run-queue@^1.0.3:
   dependencies:
     aproba "^1.1.1"
 
+saber-highlighter-prism@^0.3.4:
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/saber-highlighter-prism/-/saber-highlighter-prism-0.3.4.tgz#5a0bb736ba33408cc66a14129603357c0886b1ff"
+  integrity sha512-ZC41hT6FVd1YAW0Zgo+Nb91zfIfk2lvuS6M0FEiNKwZVKl+WOue0Qt5WitaBxrVv1xtqsIHXd3dpysKTTQWACg==
+  dependencies:
+    saber-log "^0.3.1"
+
 saber-log@^0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/saber-log/-/saber-log-0.3.1.tgz#412c19554d163eb4f88e3b9040a492c0513cb556"
@@ -4997,7 +5019,14 @@ saber-plugin-feed@latest:
   dependencies:
     feed "^4.0.0"
 
-saber-plugin-query-posts@latest:
+saber-plugin-prismjs@^0.2.1, saber-plugin-prismjs@^0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/saber-plugin-prismjs/-/saber-plugin-prismjs-0.2.4.tgz#03d9a866b196c18e97319fb677a41ac1b12a1afd"
+  integrity sha512-gyKpntRdO+b7T7XvjmWxZ76Yq/GSDvikI0qkArrgfb2uZ1Up6u7+BFX8YLWRe6uxXuttGUP3W4CA1/XLG61Vkw==
+  dependencies:
+    saber-highlighter-prism "^0.3.4"
+
+saber-plugin-query-posts@^0.4.0, saber-plugin-query-posts@latest:
   version "0.4.6"
   resolved "https://registry.yarnpkg.com/saber-plugin-query-posts/-/saber-plugin-query-posts-0.4.6.tgz#1dd4043da449c94e4223ed2295bb75b92eacdcaf"
   integrity sha512-hVuQ8zq1oigh3jt70JEPNuezX37n7lNAQe/O3aFuz1ESCrIdYyN9aRyHb4173tOi0xohSlxIdYRTzRgkY8PRhw==
@@ -5005,12 +5034,35 @@ saber-plugin-query-posts@latest:
     slugo "^0.3.1"
     url-join "^4.0.0"
 
+saber-plugin-search@^0.1.0:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/saber-plugin-search/-/saber-plugin-search-0.1.1.tgz#dbba2fedc8ad82aeb1a6c3b3048d1c065464bdf0"
+  integrity sha512-lbKvGkUD63ZkyjujP2nc8g4LljTPlG9+Qu2OHcUxhVpRX3Izr9vQv8Iz1ThGcg2vSyfy310ldnkLufjcVUcR5g==
+
+saber-plugin-search@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/saber-plugin-search/-/saber-plugin-search-1.0.0.tgz#c88e7193432579f22891b3ba2a72c7e9b575f44b"
+  integrity sha512-w41yGTTyU9qBePIGU92AwDF4wHWV5YfSgPSpE5QVVps8ujnnDTgMjuHUQKO9tntt225sdisDlVwkcnTCtY4nww==
+
 saber-theme-minima@latest:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/saber-theme-minima/-/saber-theme-minima-3.2.2.tgz#4ed0ffc6530c28a8b95d58a64a85854aaa2f630f"
   integrity sha512-pjUVSfEqJZh2y8l0F5ixBZIjTt+3W0DTgY0eJvxJDLgVuSuNHyG01RDkZGnue5JL+vIiagei6JctQcsxzQSSHg==
   dependencies:
     tinydate "^1.2.0"
+
+saber-theme-tailsaw@^1.4.3:
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/saber-theme-tailsaw/-/saber-theme-tailsaw-1.4.3.tgz#6fc286a70a0c9f7f9a75a38feb694b787ad3efaa"
+  integrity sha512-tL81u5YbVVP6uYzz4bWkazaV96occsWV0PSTAsN5KINKvYJQAta1TRQDy4nxB8SsgOPp9UFqx8VyaDMrX9Lz9A==
+  dependencies:
+    fuse.js "^3.4.5"
+    lodash.debounce "^4.0.8"
+    nprogress "^0.2.0"
+    saber-plugin-prismjs "^0.2.1"
+    saber-plugin-query-posts "^0.4.0"
+    saber-plugin-search "^0.1.0"
+    typeface-nunito-sans "^0.0.72"
 
 saber-utils@^0.2.4:
   version "0.2.4"
@@ -5690,6 +5742,11 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
+
+typeface-nunito-sans@^0.0.72:
+  version "0.0.72"
+  resolved "https://registry.yarnpkg.com/typeface-nunito-sans/-/typeface-nunito-sans-0.0.72.tgz#c99198a8d62ebdda0399dbe8cd81586a0976a01c"
+  integrity sha512-b58R4movZchZJNe5pWvqMVoJzKRs7GP09iIri4WWQOs9+G+yjoTSIpOUMU2xtLmxuyXUo1F8XhnOHY06kSDhuQ==
 
 unbox-primitive@^1.0.1:
   version "1.0.1"

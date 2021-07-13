@@ -12,7 +12,9 @@ themeConfig:
     - text: Home
       link: /
     - text: About
-      link: https://eliasl.com
+      link: /about 
+    - text: Contact
+      link: /contact
   social:
     twitter: EliasJLittle
     github: EliasLittle
@@ -23,3 +25,5 @@ plugins:
   - resolve: saber-plugin-feed
     options:
       atomFeed: true
+  - resolve: saber-plugin-prismjs
+  - resolve: saber-plugin-search

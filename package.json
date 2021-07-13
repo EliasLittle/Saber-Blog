@@ -16,5 +16,11 @@
   "main": "index.js",
   "repository": "https://github.com/EliasLittle/Saber-Blog.git",
   "author": "eliasjlittle@gmail.com",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "prismjs": "^1.24.1",
+    "saber-plugin-prismjs": "^0.2.4",
+    "saber-plugin-search": "^1.0.0",
+    "saber-theme-tailsaw": "^1.4.3"
+  }
 }

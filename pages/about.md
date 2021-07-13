@@ -1,6 +1,7 @@
 ---
 title: About
 layout: page
+permalink: /about
 ---
 
 This is the Saber port of the base Jekyll theme. Check out the [GitHub project](https://github.com/egoist/saber-theme-minima) for detailed usages.
